@@ -8,7 +8,7 @@ namespace HelloWorld
         {
             string name = args[0];
 
-            Console.WriteLine("Hello "+name+"!");
+            Console.WriteLine(string.Format("Hello {0}!", name));
 
             Console.ReadLine();
         }
