@@ -6,9 +6,13 @@ namespace HelloWorld
     {
         private static void Main(string[] args)
         {
-            string name = args[0];
+            if (args.Length < 1)
+            {
+                Console.WriteLine("Program requires at least one argument");
+                return;
+            }
 
-            Console.WriteLine(string.Format("Hello {0}!", name));
+            Console.WriteLine(string.Format("Hello {0}!", args[0]));
 
             Console.ReadLine();
         }
