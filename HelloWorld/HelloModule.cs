@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace HelloWorld
 {
@@ -20,7 +21,9 @@ namespace HelloWorld
                 return "Surname cannot be empty";
             }
 
-            return string.Format("Hello {0} {1}!", name, surname);
+            TextInfo ti = new CultureInfo("en-US").TextInfo;
+
+            return string.Format("Hello {0} {1}!", ti.ToTitleCase(name), ti.ToTitleCase(surname));
         }
     }
 }
