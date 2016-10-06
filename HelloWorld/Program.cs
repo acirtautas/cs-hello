@@ -6,15 +6,15 @@ namespace HelloWorld
     {
         private static void Main(string[] args)
         {
-            if (args.Length < 1)
+            if (args.Length < 2)
             {
-                Console.WriteLine("Program requires at least one argument");
+                Console.WriteLine("Program requires at least two arguments");
                 return;
             }
 
             var module = new HelloModule();
 
-            Console.WriteLine(module.SayHello(args[0]));
+            Console.WriteLine(module.SayHello(args[0], args[1]));
 
             Console.ReadLine();
         }
