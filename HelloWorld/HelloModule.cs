@@ -9,7 +9,7 @@ namespace HelloWorld
 {
     public class HelloModule
     {
-        public string SayHello(string name, string surname)
+        public string SayHello(string name, string surname, CultureInfo culture)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -21,7 +21,7 @@ namespace HelloWorld
                 return "Surname cannot be empty";
             }
 
-            TextInfo ti = new CultureInfo("en-US").TextInfo;
+            TextInfo ti = culture.TextInfo;
 
             return string.Format("Hello {0} {1}!", ti.ToTitleCase(name), ti.ToTitleCase(surname));
         }
